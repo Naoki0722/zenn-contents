@@ -25,3 +25,28 @@ npx zenn new:book --slug [slug name]
 ```
 npx zenn preview
 ```
+
+# Link Check for markdown
+
+```
+markdown-link-check ./articles/** --config "markdown-link-check.json"
+```
+
+## setting link check ignore patterns
+
+Edit markdown-link-check.json
+
+```
+  "ignorePatterns": [
+    {
+      "pattern": "^http://localhost",
+      "comment": "Ignore local tensorboard links"
+    }
+  ]
+```
+
+# Textlint
+
+```
+npm run lint
+```
