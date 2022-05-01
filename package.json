@@ -3,7 +3,7 @@
     "zenn-cli": "^0.1.109"
   },
   "scripts": {
-    "lint": "textlint README.md"
+    "lint": "textlint articles/**"
   },
   "devDependencies": {
     "markdown-link-check": "^3.10.0",
