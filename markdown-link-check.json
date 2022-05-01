@@ -2,6 +2,10 @@
   "ignorePatterns": [
     {
       "pattern": "^/images"
+    },
+    {
+      "pattern": "^http://localhost",
+      "comment": "Ignore local tensorboard links"
     }
   ]
 }  
