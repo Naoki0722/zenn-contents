@@ -6,6 +6,10 @@
     {
       "pattern": "^http://localhost",
       "comment": "Ignore local tensorboard links"
+    },
+    {
+      "pattern": "^https://www.google.com/ping",
+      "comment": "Ignore send ping examle"
     }
   ]
-}  
+}
