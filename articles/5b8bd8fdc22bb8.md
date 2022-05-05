@@ -12,25 +12,25 @@ Laravel を nginx と MySQL で構築した Docker 環境にメールサーバ�
 
 結構簡単に導入できるので、手順としてまとめています。
 
-# Mailhog とは？
+# Mailhog とは
 
-MailHog は`Go言語`で書かれているメールサーバで、`letter_opener_web`と同様にブラウザでメールの内容を確認することができるようになります。
+MailHog は`Go言語`で書かれているメールサーバで、`letter_opener_web`と同様にブラウザでメールの内容を確認できるようになります。
 
-また、MailHog 単体でメールサーバーとして立ち上げることができるため、Laravel や Rails に限らずどんな環境でも利用することができます。
+また、MailHog 単体でメールサーバーとして立ち上げることができるため、Laravel や Rails に限らずどんな環境でも利用できます。
 
 [mailhog/MailHog](https://github.com/mailhog/MailHog)
 
 ちなみに、Laravel の最新バージョン 8 の sail のパッケージで、使用されています。
 
-その他サービスとして`Maildev`や`MailCatcher`があるが、それらは`gem`や`npm`でインストールしてからじゃないと使えないのがとても面倒。。。
+その他サービスとして`Maildev`や`MailCatcher`があるが、それらは`gem`や`npm`でインストールしてからじゃないと使えないのがとても面倒...。
 
 今回、言語によって使えるサービスが異なるよりも、どんな環境でも汎用的に利用できる Mailhog を利用することとした。
 
 # 環境構築手順
 
-## docker-compose.yml を編集
+## Docker-compose.yml を編集
 
-下記を`docker-compose.yml`に追記
+下記を`docker-compose.yml`に追記します。
 
 ```yaml
 #↓下記追記する↓
@@ -51,7 +51,7 @@ mail:
 
 mailhog はメールをメモリ上に保存するため、Docker のコンテナを停止するとメールが消えてしまう。
 
-そのため、volume の設定は必須のため、`volumes`に`maildir: {}`、mail コンテナ記述部に `volumes: - maildir:/tmp`を記載
+そのため、volume の設定は必須のため、`volumes`に`maildir: {}`、mail コンテナ部 `volumes: - maildir:/tmp`を記載します。
 
 ```yaml
 volumes:
@@ -71,7 +71,7 @@ volumes:
       - maildir:/tmp
 ```
 
-### docker-compose.yml の完成形はこちら
+### Docker-compose.yml の完成形はこちら
 
 ```yaml
 #docker-composeバージョン
@@ -139,7 +139,7 @@ services:
 
 mailhog のイメージを新たに使用するため、image のビルドが必要。
 
-下記コマンドを実行し、イメージのビルドとコンテナ起動をする
+下記コマンドを実行し、イメージのビルドとコンテナ起動をします。
 
 ```yaml
 # イメージのビルド
@@ -167,8 +167,7 @@ docker-laravel_web_1    nginx -g daemon off;            Up      0.0.0.0:80->80/t
 
 ### 画面確認
 
-http://localhost:8025
-にアクセスし、Mailhog 画面が見れることを確認する。
+http://localhost:8025 にアクセスし、Mailhog 画面が見られることを確認する。
 
 ## Laravel 側の設定
 
@@ -178,7 +177,7 @@ http://localhost:8025
 
 下記.env の通り修正。
 
-`MAIL_FROM_ADDRESS`は好きなアドレスで構いません
+`MAIL_FROM_ADDRESS`は好きなアドレスで構いません。
 
 ```jsx
 MAIL_HOST=mail
@@ -190,7 +189,7 @@ MAIL_FROM_ADDRESS=info@example.com
 
 tinker でメールを送って送信テストを実施する。
 
-response が`null`なら成功！
+response が`null`なら成功です。
 
 ```java
 // 下記コマンドでphpコンテナに入り、php atrtisan tinkerを実行できます
@@ -216,7 +215,7 @@ http://localhost:8025
 
 ### コントローラー作成
 
-メール送信テストのためのコントローラーを作成
+メール送信テストのためのコントローラーを作成します。
 
 ```yaml
 $ php artisan make:controller MailSendController

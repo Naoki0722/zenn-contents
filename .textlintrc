@@ -2,9 +2,19 @@
   "filters": {},
   "rules": {
     "max-ten": {
-      "max": 3
+      "max": 3,
+      "touten": "、",
+      "kuten": "。"
     },
     "no-mix-dearu-desumasu": true,
-    "spellcheck-tech-word": true
+    "spellcheck-tech-word": true,
+    "textlint-rule-no-dropping-the-ra": true,
+    "@proofdict/proofdict": {
+      "dictURL": "https://tanabebe.github.io/proof-dictionary/"
+    },
+    "preset-ja-technical-writing": true,
+    "ja-space-between-half-and-full-width": {
+      "space": "always"
+  }
   }
 }
