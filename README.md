@@ -50,3 +50,11 @@ Edit markdown-link-check.json
 ```
 npm run lint
 ```
+
+
+## Appendix
+
+VSCode Markdown plugin
+
+https://zenn.dev/ctrlkeykoyubi/articles/vscode-markdown-all-in-one
+
