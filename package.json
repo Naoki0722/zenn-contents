@@ -3,7 +3,8 @@
     "zenn-cli": "^0.1.109"
   },
   "scripts": {
-    "lint": "textlint --fix articles/**"
+    "lint": "textlint --fix articles/**",
+    "lint-check": "textlint articles/**"
   },
   "devDependencies": {
     "@proofdict/textlint-rule-proofdict": "^3.1.2",
