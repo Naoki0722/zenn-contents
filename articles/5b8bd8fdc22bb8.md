@@ -323,5 +323,3 @@ welcome.blade.php の中身は下記を記述します。
 [Laravel で MailHog を導入して快適にメール開発をしよう！【Docker】](https://tech.windii.jp/backend/laravel/laravel-mailhog-docker-compose)
 
 [Docker × Laravel メールの送信処理をローカルで確認する](https://laptrinhx.com/docker-laravel-meruno-song-xin-chu-liworokarude-que-rensuru-1410764577/)
-
-[開発環境で役に立つメール送信テストツールたち](https://www.metrocode.co/blog/post/mail-testing-tools)
