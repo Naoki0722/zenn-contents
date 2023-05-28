@@ -1,11 +1,12 @@
 {
   "dependencies": {
     "textlint-filter-rule-comments": "^1.2.2",
-    "zenn-cli": "^0.1.109"
+    "zenn-cli": "^0.1.143"
   },
   "scripts": {
     "lint": "textlint --fix articles/**",
-    "lint-check": "textlint articles/**"
+    "lint-check": "textlint articles/**",
+    "markdown-check": "markdown-link-check ./articles/** --config 'markdown-link-check.json'"
   },
   "devDependencies": {
     "@proofdict/textlint-rule-proofdict": "^3.1.2",
