@@ -1,5 +1,5 @@
 ---
-title: "Rails+Hotwireの環境構築"
+title: "Rails+Hotwireの環境構築(./bin/devまで)"
 emoji: "✨"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["rails", "ruby"]
@@ -28,15 +28,14 @@ Rails のインストールから対応していきます。
   - TailwindCSS を使うか
 
 結論ですが、下記で進めます。
-
 今回の作業は最適な環境構築をすることではなく、Hotwire を使うことが目的です。
-
 ですので、私が普段慣れ親しんでる技術 かつ シンプルに取り組むこととしました。
 
 - Rails 7.2
 - Ruby 3.3.5
 - TailwindCss
 - SQLite
+- Local に構築
 
 
 ## アセットパイプラインについて
@@ -51,11 +50,8 @@ Rails には、「アセットパイプライン」という仕組みがあり�
 - propshaft
 
 デフォルトインストールでは、`sprockets`が選択されるはずです。
-
 どちらがいいというのは利用プロジェクトによります。
-
 両者の違いとしては、トランスパイル、圧縮・連結などの処理をするかしないかになります。
-
 `propshaft` は、トランスパイル、圧縮・連結などの処理をせず、ダイジェストの追加だけ実行するため、`sprockets`よりも高速で動作するのが特徴です。
 
 
@@ -71,8 +67,6 @@ Rails には、「アセットパイプライン」という仕組みがあり�
   - JavaScript コードがトランスパイルに依存している場合選択した方がいい
 
 デフォルトインストールでは、`importmap-rails`が選択されるはずです。
-
-
 importmap-rails では、CSS の配信には利用できません。
 
 css 配信のため、以下ツールが存在します。
@@ -93,7 +87,6 @@ importmap-rails: JavaScript アセットパイプラインとして利用。
 >cssbundling-railsはCSSの処理をNode.jsに依存しています。 dartsass-rails gemとtailwindcss-rails gemは、それぞれTailwind CSSとDart Sassのスタンドアロン版実行ファイルを使うので、Node.jsに依存しません。 JavaScriptをimportmap-railsで処理し、CSSをdartsass-railsまたはtailwindcss-railsで処理する形にすれば、Node依存を完全に避けられるので、よりシンプルなソリューションとなります。
 
 css をトランスパイルするとかなら、`cssbundling-rails`を使う選択はありです。
-
 しかし、今回のプロジェクトのように Tailwind を使いたいなら、tailwindcss-rails gem を使えば Node が必要にならなくなるのです。
 
 ## インストール作業
@@ -248,6 +241,12 @@ css の設定です。
 - `sass`
 
 css は今回 tailwind を使いたいので、オプションで`--css=tailwind`とします。
+
+### --skip-hotwire
+
+肝心の Hotwire のインストールについてですが、デフォルトでインストールされるように設定されています。
+
+逆に Hotiwre のインストールスキップをする場合は、 `--skip-hotwire`の設定をすれば Hotwire インストールをスキップ可能ですが、今回はインストールしたいので何も設定しません。
 
 そんなところで、下記コマンドを実行します。
 
@@ -523,3 +522,5 @@ $ ./bin/dev
 ```
 
 この状態で Hotwire もインストールされているので、ここまできたら初期インストールは完了です。
+
+Hotiwre の設定については別記事とします。
