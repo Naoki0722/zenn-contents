@@ -4,6 +4,7 @@ emoji: "🗒️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: []
 published: true
+publication_name: "yamaden"
 ---
 
 初めて Kaigi on Rails に参加しました。
