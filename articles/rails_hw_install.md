@@ -3,7 +3,7 @@ title: "Rails+Hotwireの環境構築(./bin/devまで)"
 emoji: "✨"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["rails", "ruby"]
-published: true
+published: false
 publication_name: "yamaden"
 ---
 
