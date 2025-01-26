@@ -320,6 +320,5 @@ welcome.blade.php の中身は下記を記述します。
 
 # 参考記事
 
-[Laravel で MailHog を導入して快適にメール開発をしよう！【Docker】](https://tech.windii.jp/backend/laravel/laravel-mailhog-docker-compose)
 
 [Docker × Laravel メールの送信処理をローカルで確認する](https://qiita.com/ucan-lab/items/49e7f4986564f68e95c4)
