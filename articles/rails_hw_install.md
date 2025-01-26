@@ -953,4 +953,4 @@ import "controllers"
 
 本来はユーザー編集機能を作りたいものの、目的は Hotwire と Action Cable を使うことですのでこちらもやらないで進めます、すみません...。
 
-別記事でいよいよDM送信周りをTurbo Streamで実装し直していきます。
+別記事でいよいよ DM 送信周りを Turbo Stream で実装し直していきます。
